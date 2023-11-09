@@ -30,10 +30,15 @@ export default function EsqueceuSenha({ navigation }) {
           <Text style={{ fontWeight: '600', fontSize: 18, textAlign: 'center', margin: 10, marginBottom: 40,  }}>
             Verifique sua caixa de entrada.
           </Text>
+          <View style={{  gap: 10, marginBottom: 20,  width: 170, alignSelf: 'center'}}>
+            <Button title='Voltar ao Login' color='blue' onPress={() => {
+              navigation.navigate('Inicio'); 
+            }} />
+          </View>
         </View>
       ) : (
         <View>
-          <Text style={{ fontSize: 18, marginBottom: 10, fontWeight: '500' }}>
+          <Text style={{ fontSize: 18, marginBottom: 20, fontWeight: '500' }}>
           Digite o e-mail da conta que deseja recuperar a senha:
           </Text>
           <TextInput
@@ -43,20 +48,20 @@ export default function EsqueceuSenha({ navigation }) {
               borderColor: 'gray',
               borderWidth: 1,
               borderRadius: 5,
-              marginBottom: 20,
+              marginBottom: 25,
               paddingLeft: 10,
             }}
             placeholder="Email"
             onChangeText={(email) => setEmail(email)}
           />
+          <View style={{ gap: 10, marginBottom: 20,  width: 170, alignSelf: 'center'}}>
+            <Button title='Redefinir Senha' color="blue" onPress={handleResetPassword} />
+            <Button title='Voltar ao Login' color='blue' onPress={() => {
+              navigation.navigate('Inicio'); 
+            }} />
+          </View>
         </View>
       )}
-      <View style={{ gap: 10, marginBottom: 20}}>
-        <Button title='   Redefinir Senha   ' color="blue" onPress={handleResetPassword} />
-        <Button title='   Voltar ao Login   ' color='blue' onPress={() => {
-          navigation.navigate('Inicio'); 
-        }} />
-      </View>
     </View>
   );
 }
