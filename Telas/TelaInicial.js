@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TextInput, Button, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, Button } from "react-native";
 
 export default function TelaInicial({ navigation }) {
   return (
@@ -14,11 +14,9 @@ export default function TelaInicial({ navigation }) {
         placeholder="Senha"
         secureTextEntry={true}
       />
-      <TouchableOpacity onPress={() => { navigation.navigate('Formulario') }}>
-        <Text style={{ color: 'blue', textDecorationLine: 'underline', marginBottom: 10 }}>Esqueceu a senha?</Text>
-      </TouchableOpacity>
+      <Text style={{ color: 'blue', textDecorationLine: 'underline' } } onPress={() => { navigation.navigate('Formulario') }}>Esqueceu a Senha</Text>
       <Button title='LOGIN' color='blue' onPress={() => { navigation.navigate('Formulario') }} />
-      <Text style={{ marginTop: 10 }}>Não possui conta? <Text style={{ color: 'blue', textDecorationLine: 'underline' }}>Cadastrar</Text></Text>
+      <Text style={{ marginTop: 10 }}>Não possui conta? <Text style={{ color: 'blue', textDecorationLine: 'underline' } } onPress={() => { navigation.navigate('Formulario') }}>Cadastrar</Text></Text>
     </View>
   );
 }
