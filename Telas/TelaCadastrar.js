@@ -44,8 +44,8 @@ export default function Formulario({ navigation }) {
         onChangeText={(repeatSenha) => setRepeatSenha(repeatSenha)}
       />
       <View style={{ gap: 10 }}>
-         <Button title='    Cadastrar    ' color='blue' onPress={handleSingUp}/>
-         <Button title='  Voltar ao Login  ' color='blue' onPress={() => { navigation.navigate('Inicio') }} />
+         <Button title='    Cadastrar    ' color='mediumvioletred' onPress={handleSingUp}/>
+         <Button title='  Voltar ao Login  ' color='mediumvioletred' onPress={() => { navigation.navigate('Inicio') }} />
       </View>
     </View>
   );

@@ -35,14 +35,14 @@ export default function TelaInicial({ navigation }) {
         secureTextEntry={true}
         onChangeText={(senha) => setSenha(senha)}
       />
-      <Text style={{ color: 'blue', textDecorationLine: 'underline', 
+      <Text style={{ color: 'mediumvioletred', textDecorationLine: 'underline', 
             alignSelf: 'flex-start', marginStart: 34, marginBottom: 4}} 
             onPress={() => { navigation.navigate('Esqueceu') }}>Esqueceu a senha?</Text>
       
       <Text style={{ color: 'black', alignSelf: 'flex-start', marginStart: 34, marginBottom: 20}}>
         Não possui conta? 
-        <Text style={{ color: 'blue', textDecorationLine: 'underline' } } onPress={() => { navigation.navigate('Cadastrar') }}> Cadastre-se!</Text></Text>
-      <Button title='     LOGIN     ' color='blue' onPress={ handleLogin } />
+        <Text style={{ color: 'mediumvioletred', textDecorationLine: 'underline' } } onPress={() => { navigation.navigate('Cadastrar') }}> Cadastre-se!</Text></Text>
+      <Button title='     LOGIN     ' color='mediumvioletred' onPress={ handleLogin } />
     </View>
   );
 }
