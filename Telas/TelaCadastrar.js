@@ -12,7 +12,7 @@ export default function Formulario({ navigation }) {
       if (senha == repeatSenha){
          createUserWithEmailAndPassword(auth, email, senha)
          .then(() => {
-            navigation.navigate('Inicio')
+            navigation.navigate('Fim', { email: email })
          })
          .catch((error) => {
             alert(error.message)
