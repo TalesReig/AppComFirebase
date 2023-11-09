@@ -12,8 +12,7 @@ export default function TelaInicial({ navigation }) {
       signInWithEmailAndPassword(auth, email, senha)
          .then((userCredential) =>{
             const user = userCredential.user;
-            navigation.navigate('Fim');
-            alert('Chegou')
+            navigation.navigate('Fim', { email: user.email });
          })
          .catch((error) => {
             const eerorMessage = error.message;
@@ -31,14 +30,17 @@ export default function TelaInicial({ navigation }) {
         onChangeText={(email) => setEmail(email)}
       />
       <TextInput
-        style={{ width: 300, height: 40, borderColor: 'gray', borderWidth: 1, borderRadius: 5, marginBottom: 10, paddingLeft: 10 }}
+        style={{ width: 300, height: 40, borderColor: 'gray', borderWidth: 1, borderRadius: 5, marginBottom: 3, paddingLeft: 10 }}
         placeholder="Senha"
         secureTextEntry={true}
         onChangeText={(senha) => setSenha(senha)}
       />
-      <Text style={{ color: 'blue', textDecorationLine: 'underline' } } onPress={() => { navigation.navigate('Formulario') }}>Esqueceu a Senha</Text>
-      <Button title='LOGIN' color='blue' onPress={ handleLogin } />
-      <Text style={{ marginTop: 10 }}>Não possui conta? <Text style={{ color: 'blue', textDecorationLine: 'underline' } } onPress={() => { navigation.navigate('Formulario') }}>Cadastrar</Text></Text>
+      <Text style={{ color: 'blue', textDecorationLine: 'underline', 
+            alignSelf: 'flex-start', marginStart: 34, marginBottom: 20} } 
+            onPress={() => { navigation.navigate('Esqueceu') }}>Esqueceu a senha?</Text>
+      
+      <Button title='     LOGIN     ' color='blue' onPress={ handleLogin } />
+      <Text style={{ marginTop: 10 }}>Não possui conta? <Text style={{ color: 'blue', textDecorationLine: 'underline' } } onPress={() => { navigation.navigate('Cadastrar') }}>Cadastrar</Text></Text>
     </View>
   );
 }

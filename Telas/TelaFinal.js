@@ -1,13 +1,13 @@
 import { View, Button, ImageBackground, Text } from "react-native";
 
-export default function TelaFinal({navigation, route}){
-   return(
-      <ImageBackground
-         style={{ flex: 1  }}
-         source={ require('../assets/background.jpg') }>
-         <Text style={{ fontWeight: 'bold', fontSize: 20, textAlign: 'center', marginTop: 20, marginBottom: 20 }}>
-               Dados do Usuário
-         </Text>
-      </ImageBackground>
+export default function TelaFinal({ route, navigation }) {
+   const { email } = route.params;
+
+   return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text style={{ fontSize: 20, marginBottom: 30, fontWeight: 'bold' }}>Usuário logado!</Text>
+        <Text style={{ fontSize: 18, marginBottom: 40, fontWeight: 'semi-bold' }}>Olá, {email}</Text>
+        <Button title='    Sign Out    ' color='blue' onPress={() => { navigation.navigate('Inicio') }} />
+      </View>
    );
 }

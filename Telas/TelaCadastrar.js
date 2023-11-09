@@ -18,14 +18,14 @@ export default function Formulario({ navigation }) {
             alert(error.message)
          })
       }else{
-         alert('As senhas devem ser iguais !!!')
+         alert('As senhas devem ser iguais.')
       }
    }
 
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text style={{ fontSize: 24, marginBottom: 20, fontWeight: 'bold' }}>LOGIN</Text>
+      <Text style={{ fontSize: 24, marginBottom: 20, fontWeight: 'bold' }}>CADASTRO</Text>
       <TextInput
         style={{ width: 300, height: 40, borderColor: 'gray', borderWidth: 1, borderRadius: 5, marginBottom: 10, paddingLeft: 10 }}
         placeholder="Email"
@@ -38,17 +38,15 @@ export default function Formulario({ navigation }) {
         onChangeText={(senha) => setSenha(senha)}
       />
       <TextInput
-        style={{ width: 300, height: 40, borderColor: 'gray', borderWidth: 1, borderRadius: 5, marginBottom: 10, paddingLeft: 10 }}
+        style={{ width: 300, height: 40, borderColor: 'gray', borderWidth: 1, borderRadius: 5, marginBottom: 20, paddingLeft: 10 }}
         placeholder="Repitir Senha"
         secureTextEntry={true}
         onChangeText={(repeatSenha) => setRepeatSenha(repeatSenha)}
       />
-      <Button 
-         title='Cadastrar' 
-         color='blue'
-         onPress={handleSingUp}
-      />
-      <Button title='Voltar' color='blue' onPress={() => { navigation.navigate('Formulario') }} />
+      <View style={{ gap: 10 }}>
+         <Button title='    Cadastrar    ' color='blue' onPress={handleSingUp}/>
+         <Button title='  Voltar ao Login  ' color='blue' onPress={() => { navigation.navigate('Inicio') }} />
+      </View>
     </View>
   );
 }
