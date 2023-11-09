@@ -43,10 +43,12 @@ export default function Formulario({ navigation }) {
         secureTextEntry={true}
         onChangeText={(repeatSenha) => setRepeatSenha(repeatSenha)}
       />
-      <Button title='Cadastrar' color='blue'
+      <Button 
+         title='Cadastrar' 
+         color='blue'
          onPress={handleSingUp}
       />
-      <Button title='Voltar' color='blue' style={{ width: 100, height: 40, borderRadius: 5, marginBottom: 10, paddingLeft: 10 }} onPress={() => { navigation.navigate('Formulario') }} />
+      <Button title='Voltar' color='blue' onPress={() => { navigation.navigate('Formulario') }} />
     </View>
   );
 }
